@@ -1,0 +1,45 @@
+{
+    "name": "silverstripe/installer",
+    "type": "silverstripe-recipe",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": ">=7.1.0",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-cms": "4.x-dev",
+        "silverstripe-themes/simple": "~3.2.0",
+        "silverstripe/login-forms": "4.x-dev",
+        "silverstripe/framework": "dev-pulls/4/php8-fqcn-token as 4.x-dev",
+        "league/csv": "^9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "sminnee/phpunit-mock-objects": "^3.4.9"
+    },
+    "extra": {
+        "resources-dir": "_resources",
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/creative-commoners/silverstripe-framework.git"
+        }
+    ],
+    "config": {
+        "process-timeout": 600
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

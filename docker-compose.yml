@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+     MYSQL_ROOT_PASSWORD: silverstripe
+     MYSQL_DATABASE: SS_build
+     MYSQL_USER: silverstripe
+     MYSQL_PASSWORD: silverstripe
+  web:
+    build: .
+    restart: always
+    ports:
+      - 8090:80
+    depends_on:
+      - db
+    volumes:
+      - ./build:/var/www/html
+    environment:
+      SS_DATABASE_CLASS: MySQLDatabase
+      SS_DATABASE_SERVER: db
+      SS_DATABASE_USERNAME: root
+      SS_DATABASE_PASSWORD: silverstripe
+      SS_DATABASE_NAME: SS_build
+      XDEBUG_CONFIG: remote_enable=1 remote_mode=req remote_port=9000 remote_host=host.docker.internal remote_connect_back=0

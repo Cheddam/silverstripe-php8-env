@@ -3,6 +3,9 @@
 To run the environment:
 
 ```
+cd build
+composer install
+cd ..
 docker-compose up -d
 ```
 

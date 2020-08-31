@@ -20,6 +20,8 @@ RUN apt install -y \
 # XDebug
 RUN git clone git://github.com/xdebug/xdebug.git /usr/src/php/ext/xdebug
 RUN docker-php-ext-install xdebug
+RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Apache config
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public

@@ -23,4 +23,4 @@ services:
       SS_DATABASE_USERNAME: root
       SS_DATABASE_PASSWORD: silverstripe
       SS_DATABASE_NAME: SS_build
-      XDEBUG_CONFIG: remote_enable=1 remote_mode=req remote_port=9000 remote_host=host.docker.internal remote_connect_back=0
+      XDEBUG_SESSION: PHPSTORM
